@@ -127,6 +127,10 @@
 }
 
 @media screen and (max-width: 1050px) {
+  .texts {
+    padding: 2rem;
+  }
+
   .search_bar {
     border-radius: 0;
     width: 100%;
@@ -140,6 +144,10 @@
 
   .paragraph {
     background-color: rgb(255, 255, 255, 0.8);
+  }
+
+  .texts {
+    padding: 0;
   }
 
   .title {
