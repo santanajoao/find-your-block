@@ -1,0 +1,127 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  gap: 2.5rem;
+  position: relative;
+  min-height: 532px;
+}
+
+.texts {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.125rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  color: var(--red);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  max-width: 647px;
+}
+
+.emphasis {
+  color: var(--purple);
+}
+
+.search_bar {
+  z-index: 2;
+  display: flex;
+  background-color: white;
+  padding: 2.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.625rem;
+  border: 1px solid #eaeaea;
+}
+
+.input_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.input_wrapper:nth-of-type(2):after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  top: 37%;
+  width: 0.5rem;
+  transform: rotate(45deg);
+  border-bottom: 2px solid #858793;
+  border-right: 2px solid #858793;
+  height: 0.5rem;
+}
+
+.input,
+.select {
+  font-size: 1rem;
+  padding: 0.938em 3em;
+  border: none;
+  background-color: var(--secondary-bg-color);
+  border-radius: 0.3125em;
+  width: 348px;
+  appearance: none;
+}
+
+.select {
+  color: #7c7c8a;
+}
+
+.input::placeholder {
+  color: #7c7c8a;
+}
+
+.icon {
+  font-size: 1.5rem;
+  display: flex;
+  box-sizing: content-box;
+  padding: 0.75rem;
+  position: absolute;
+  color: var(--red);
+}
+
+.button {
+  background-color: var(--purple);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+}
+
+.ilustration {
+  position: absolute;
+  z-index: 1;
+}
+
+.ilustration:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+
+.ilustration:nth-of-type(2) {
+  bottom: 0;
+  right: 0;
+}
