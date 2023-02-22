@@ -27,7 +27,7 @@ export default function Header() {
           />
         </div>
 
-        <div className={styles.input_wrapper}>
+        <div className={styles.select_wrapper}>
           <SlLocationPin className={styles.icon} />
           <select name="" id="" className={styles.select}>
             <option value="">Selecione uma cidade</option>
