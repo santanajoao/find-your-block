@@ -3,8 +3,25 @@ import { SlLocationPin } from 'react-icons/sl';
 import topLeftImg from '../../assets/hero-top-left-ilustration.svg';
 import topRightImg from '../../assets/hero-bottom-right-ilustration.svg';
 import styles from './style.module.css';
+import { useContext, useState } from 'react';
+import BlocksContext from '../../context/BlocksContext';
 
 export default function Header() {
+  const [search, setSearch] = useState('');
+  const [city, setCity] = useState('');
+  const { blockList, setNameFilter, setLocationFilter } =
+    useContext(BlocksContext);
+
+  const cities = blockList.reduce((cities, { location }) => {
+    return cities.includes(location) ? cities : [...cities, location];
+  }, []);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setNameFilter(search);
+    setLocationFilter(city);
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.texts}>
@@ -15,29 +32,36 @@ export default function Header() {
         </h1>
       </div>
 
-      <div className={styles.search_bar}>
+      <form onSubmit={handleSubmit} className={styles.search_bar}>
         <div className={styles.input_wrapper}>
           <BsSearch className={styles.icon} />
           <input
+            value={search}
             type="text"
             placeholder="Pesquise por nome"
-            name=""
-            id=""
+            onChange={({ target }) => setSearch(target.value)}
             className={styles.input}
           />
         </div>
 
         <div className={styles.select_wrapper}>
           <SlLocationPin className={styles.icon} />
-          <select name="" id="" className={styles.select}>
+          <select
+            value={city}
+            onChange={({ target }) => setCity(target.value)}
+            className={styles.select}
+          >
             <option value="">Selecione uma cidade</option>
+            {cities.map(($city) => (
+              <option value={$city}>{$city}</option>
+            ))}
           </select>
         </div>
 
-        <button type="button" className={styles.button}>
+        <button type="submit" className={styles.button}>
           Buscar agora
         </button>
-      </div>
+      </form>
 
       <img src={topLeftImg} className={styles.ilustration} alt="" />
       <img src={topRightImg} className={styles.ilustration} alt="" />

@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
-import { fetchBlocks } from '../../services/fakeAPI';
+import { useContext } from 'react';
+import BlockContext from '../../context/BlocksContext';
 import BlockCard from '../BlockCard';
 import styles from './style.module.css';
 
 export default function BlockList() {
-  const [blockList, setBlockList] = useState([]);
+  const { nameFilter, locationFilter, blockList } = useContext(BlockContext);
 
-  useEffect(() => {
-    getBlocks();
-  }, []);
-
-  async function getBlocks() {
-    const blocks = await fetchBlocks();
-    setBlockList(blocks);
-  }
+  const filteredList = blockList
+    .filter(({ name }) => name.includes(nameFilter))
+    .filter(({ location }) => location.includes(locationFilter));
 
   return (
     <main className={styles.main}>
@@ -33,18 +28,22 @@ export default function BlockList() {
         </div>
       </div>
 
-      <ul className={styles.list}>
-        {blockList.map((block) => (
-          <li>
-            <BlockCard
-              image={block.image}
-              name={block.name}
-              description={block.description}
-              location={block.location}
-            />
-          </li>
-        ))}
-      </ul>
+      {filteredList.length ? (
+        <ul className={styles.list}>
+          {filteredList.map((block) => (
+            <li key={block.name}>
+              <BlockCard
+                image={block.image}
+                name={block.name}
+                description={block.description}
+                location={block.location}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.paragraph}>Nenhum bloco encontrado</p>
+      )}
     </main>
   );
 }

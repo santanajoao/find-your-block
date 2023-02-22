@@ -20,7 +20,7 @@ export const blocks = [
   {
     image:
       'https://images.unsplash.com/photo-1588172561695-a9eed1db3441?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80',
-    name: 'O Python do vovô não sobe mais',
+    name: 'Hoje dou exception',
     description: lorem,
     location: 'Curitiba - PR',
   },
