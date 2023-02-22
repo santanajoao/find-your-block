@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchBlocks } from '../../services/fakeAPI';
 import BlockCard from '../BlockCard';
+import styles from './style.module.css';
 
 export default function BlockList() {
   const [blockList, setBlockList] = useState([]);
@@ -15,17 +16,24 @@ export default function BlockList() {
   }
 
   return (
-    <main>
-      <div>
-        <h2>Blocos recomendados</h2>
+    <main className={styles.main}>
+      <div className={styles.line}>
+        <h2 className={styles.title}>Blocos recomendados</h2>
 
-        <div>
-          <button type="button">Lista</button>
-          <button type="button">Mapa</button>
+        <div className={styles.buttons_wrapper}>
+          <button
+            type="button"
+            className={`${styles.button} ${styles.selected}`}
+          >
+            Lista
+          </button>
+          <button type="button" className={styles.button}>
+            Mapa
+          </button>
         </div>
       </div>
 
-      <ul>
+      <ul className={styles.list}>
         {blockList.map((block) => (
           <li>
             <BlockCard

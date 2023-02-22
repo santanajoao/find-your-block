@@ -46,7 +46,8 @@ export const blocks = [
     location: saoPaulo,
   },
   {
-    image: 'https://unsplash.com/pt-br/fotografias/G7VEYaDm8I0',
+    image:
+      'https://images.unsplash.com/photo-1593800026666-77f9dd4f6a9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
     name: 'Pimenta no C# dos outros é refresco',
     description: lorem,
     location: 'Rio de Janeiro - RJ',
