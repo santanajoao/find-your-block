@@ -8,7 +8,7 @@ Esse repositório contém minha implementação de um protótipo do figma da roc
 
 Acesse a aplicação nesse link:
 
-## [link-link.link](link-link.link)
+## [find-your-block-phi.vercel.app](https://find-your-block-phi.vercel.app)
 
 # Tecnologias utilizadas
 
