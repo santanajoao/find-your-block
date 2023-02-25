@@ -169,6 +169,10 @@
 }
 
 @media screen and (max-width: 425px) {
+  .paragraph {
+    margin-top: 2rem;
+  }
+
   .ilustration {
     width: 90%;
   }
