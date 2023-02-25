@@ -167,3 +167,9 @@
     opacity: 100%;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .ilustration {
+    width: 90%;
+  }
+}
