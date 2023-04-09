@@ -1,6 +1,6 @@
 # Find Your Block
 
-Esse repositório contém minha implementação de um protótipo do figma da rocketseat. Uma aplicação para buscar por blocos de carnal por nome ou localidade.
+Uma aplicação para buscar por blocos de carnal por nome ou localidade. Esse repositório contém minha implementação de um protótipo do figma da rocketseat.
 
 <img src="./images/app-screenshot.png" alt="Imagem da aplicação funcionando">
 
