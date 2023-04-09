@@ -52,8 +52,10 @@ export default function Header() {
             className={styles.select}
           >
             <option value="">Selecione uma cidade</option>
-            {cities.map(($city) => (
-              <option value={$city}>{$city}</option>
+            {cities.map(($city, index) => (
+              <option key={index} value={$city}>
+                {$city}
+              </option>
             ))}
           </select>
         </div>
